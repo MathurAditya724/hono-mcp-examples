@@ -1,0 +1,14 @@
+# prod
+dist/
+
+# deps
+node_modules/
+.wrangler
+
+# env
+.env
+.env.production
+.dev.vars
+
+# misc
+.DS_Store

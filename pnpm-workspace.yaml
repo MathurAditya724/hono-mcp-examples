@@ -1,2 +1,5 @@
 packages:
-  - 'examples/*'
+  - examples/*
+
+overrides:
+  '@hono/mcp': link:../hono-middleware/packages/mcp
