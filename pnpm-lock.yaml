@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@hono/mcp': link:../hono-middleware/packages/mcp
-
 importers:
 
   .:
@@ -18,8 +15,8 @@ importers:
   examples/simple-auth-stytch:
     dependencies:
       '@hono/mcp':
-        specifier: link:../../../hono-middleware/packages/mcp
-        version: link:../../../hono-middleware/packages/mcp
+        specifier: https://pkg.pr.new/@hono/mcp@e63fed5
+        version: https://pkg.pr.new/@hono/mcp@e63fed5(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)
       '@modelcontextprotocol/sdk':
         specifier: ^1.20.2
         version: 1.20.2
@@ -73,8 +70,8 @@ importers:
   examples/simple-auth-workers:
     dependencies:
       '@hono/mcp':
-        specifier: link:../../../hono-middleware/packages/mcp
-        version: link:../../../hono-middleware/packages/mcp
+        specifier: https://pkg.pr.new/@hono/mcp@e63fed5
+        version: https://pkg.pr.new/@hono/mcp@e63fed5(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)
       '@modelcontextprotocol/sdk':
         specifier: ^1.20.2
         version: 1.20.2
@@ -90,7 +87,7 @@ importers:
     devDependencies:
       wrangler:
         specifier: ^4.4.0
-        version: 4.45.2
+        version: 4.45.3
 
 packages:
 
@@ -403,6 +400,15 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@hono/mcp@https://pkg.pr.new/@hono/mcp@e63fed5':
+    resolution: {tarball: https://pkg.pr.new/@hono/mcp@e63fed5}
+    version: 0.2.0
+    peerDependencies:
+      '@modelcontextprotocol/sdk': ^1.17.3
+      hono: '*'
+      hono-rate-limiter: ^0.4.2
+      pkce-challenge: ^5.0.0
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -718,8 +724,8 @@ packages:
   '@poppinss/exception@1.2.2':
     resolution: {integrity: sha512-m7bpKCD4QMlFCjA/nKTs23fuvoVFoA83brRKmObCUNmi/9tVu8Ve3w4YQAnJu4q3Tjf5fr685HYIC/IA2zHRSg==}
 
-  '@sindresorhus/is@7.1.0':
-    resolution: {integrity: sha512-7F/yz2IphV39hiS2zB4QYVkivrptHHh0K8qJJd9HhuWSdvf8AN7NpebW3CcDZDBQsUPMoDKWsY2WWgW7bqOcfA==}
+  '@sindresorhus/is@7.1.1':
+    resolution: {integrity: sha512-rO92VvpgMc3kfiTjGT52LEtJ8Yc5kCWhZjLQ3LwlA4pSgPpQO7bVpYXParOD8Jwf+cVQECJo3yP/4I8aZtUQTQ==}
     engines: {node: '>=18'}
 
   '@speed-highlight/core@1.2.8':
@@ -1067,6 +1073,11 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  hono-rate-limiter@0.4.2:
+    resolution: {integrity: sha512-AAtFqgADyrmbDijcRTT/HJfwqfvhalya2Zo+MgfdrMPas3zSMD8SU03cv+ZsYwRU1swv7zgVt0shwN059yzhjw==}
+    peerDependencies:
+      hono: ^4.1.1
 
   hono@4.10.4:
     resolution: {integrity: sha512-YG/fo7zlU3KwrBL5vDpWKisLYiM+nVstBQqfr7gCPbSYURnNEP9BDxEMz8KfsDR9JX0lJWDRNc6nXX31v7ZEyg==}
@@ -1491,8 +1502,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.45.2:
-    resolution: {integrity: sha512-+G24gD+Rh7iBus5QiVBhNgSLzyAiyuZSm+3Ih5li8+PEA+gosAXfDSZlNZwsVmXd8VJTjq+BR4vhUiruQRWgTw==}
+  wrangler@4.45.3:
+    resolution: {integrity: sha512-0ddEA9t4HeBgSVTVTcqtBHl7Z5CorWZ8tGgTQCP5XuL+9E1TJRwS6t/zzG51Ruwjb17SZYCaLchoM8V629S8cw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -1718,6 +1729,13 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.4':
     optional: true
+
+  '@hono/mcp@https://pkg.pr.new/@hono/mcp@e63fed5(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)':
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.20.2
+      hono: 4.10.4
+      hono-rate-limiter: 0.4.2(hono@4.10.4)
+      pkce-challenge: 5.0.0
 
   '@img/colour@1.0.0':
     optional: true
@@ -1957,12 +1975,12 @@ snapshots:
   '@poppinss/dumper@0.6.4':
     dependencies:
       '@poppinss/colors': 4.1.5
-      '@sindresorhus/is': 7.1.0
+      '@sindresorhus/is': 7.1.1
       supports-color: 10.2.2
 
   '@poppinss/exception@1.2.2': {}
 
-  '@sindresorhus/is@7.1.0': {}
+  '@sindresorhus/is@7.1.1': {}
 
   '@speed-highlight/core@1.2.8': {}
 
@@ -2324,6 +2342,10 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hono-rate-limiter@0.4.2(hono@4.10.4):
+    dependencies:
+      hono: 4.10.4
 
   hono@4.10.4: {}
 
@@ -2750,7 +2772,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251011.0
       '@cloudflare/workerd-windows-64': 1.20251011.0
 
-  wrangler@4.45.2:
+  wrangler@4.45.3:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.7.8(unenv@2.0.0-rc.21)(workerd@1.20251011.0)
