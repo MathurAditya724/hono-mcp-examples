@@ -1,6 +1,7 @@
 "use client";
 import { IdentityProvider } from "@stytch/nextjs";
+import {withLoginRequired} from "@/utils/auth";
 
-export default function IDPPage() {
+export default withLoginRequired(function IDPPage() {
   return <IdentityProvider />;
-}
+})

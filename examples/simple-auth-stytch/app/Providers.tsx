@@ -2,9 +2,9 @@
 import { StytchProvider } from "@stytch/nextjs";
 import { StytchUIClient } from "@stytch/vanilla-js";
 import type { PropsWithChildren } from "react";
+import {createStytchUIClient} from "@stytch/nextjs/ui";
 
-export default function RootProviders({ children }: PropsWithChildren) {
-  const stytchClient = new StytchUIClient(
+const stytchClient = createStytchUIClient(
     process.env.NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN!,
     {
       cookieOptions: {
@@ -15,7 +15,8 @@ export default function RootProviders({ children }: PropsWithChildren) {
         domain: "localhost",
       },
     },
-  );
+);
 
+export default function RootProviders({ children }: PropsWithChildren) {
   return <StytchProvider stytch={stytchClient}>{children}</StytchProvider>;
 }

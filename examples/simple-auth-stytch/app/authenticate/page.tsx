@@ -1,16 +1,16 @@
 "use client";
 import { useStytch, useStytchSession } from "@stytch/nextjs";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import {useOnLoginComplete} from "@/utils/auth";
 
 export default function AuthenticatePage() {
   const stytch = useStytch();
-  const router = useRouter();
+  const onLoginComplete = useOnLoginComplete();
   const { session } = useStytchSession();
 
   useEffect(() => {
     if (session) {
-      router.push("/");
+      onLoginComplete();
     } else {
       const token = new URLSearchParams(window.location.search).get("token");
       if (token) {
@@ -19,7 +19,7 @@ export default function AuthenticatePage() {
         });
       }
     }
-  }, [stytch, session]);
+  }, [stytch, session, onLoginComplete]);
 
   return <pre>{JSON.stringify(session ?? {}, null, 2)}</pre>;
 }
