@@ -108,6 +108,34 @@ importers:
         specifier: ^4.4.0
         version: 4.45.3
 
+  examples/with-event-store:
+    dependencies:
+      '@hono/mcp':
+        specifier: https://pkg.pr.new/@hono/mcp@06a9050
+        version: https://pkg.pr.new/@hono/mcp@06a9050(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)
+      '@hono/node-server':
+        specifier: ^1.19.6
+        version: 1.19.6(hono@4.10.4)
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.20.2
+        version: 1.20.2
+      hono:
+        specifier: ^4.10.4
+        version: 4.10.4
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
+    devDependencies:
+      '@types/node':
+        specifier: ^20.11.17
+        version: 20.19.24
+      tsx:
+        specifier: ^4.7.1
+        version: 4.20.6
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
 packages:
 
   '@alloc/quick-lru@5.2.0':
@@ -420,6 +448,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@hono/mcp@https://pkg.pr.new/@hono/mcp@06a9050':
+    resolution: {tarball: https://pkg.pr.new/@hono/mcp@06a9050}
+    version: 0.2.0
+    peerDependencies:
+      '@modelcontextprotocol/sdk': ^1.17.3
+      hono: '*'
+      hono-rate-limiter: ^0.4.2
+      pkce-challenge: ^5.0.0
+
   '@hono/mcp@https://pkg.pr.new/@hono/mcp@e63fed5':
     resolution: {tarball: https://pkg.pr.new/@hono/mcp@e63fed5}
     version: 0.2.0
@@ -428,6 +465,12 @@ packages:
       hono: '*'
       hono-rate-limiter: ^0.4.2
       pkce-challenge: ^5.0.0
+
+  '@hono/node-server@1.19.6':
+    resolution: {integrity: sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -1075,6 +1118,9 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
+  get-tsconfig@4.13.0:
+    resolution: {integrity: sha512-1VKTZJCwBrvbd+Wn3AOgQP/2Av+TfTCOlE4AcRJE72W1ksZXbAx8PPBR9RzgTeSPzlPMHrbANMH3LbltH73wxQ==}
+
   glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
 
@@ -1359,6 +1405,9 @@ packages:
     resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
     engines: {node: '>=0.10.0'}
 
+  resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
+
   router@2.2.0:
     resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
     engines: {node: '>= 18'}
@@ -1469,6 +1518,11 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  tsx@4.20.6:
+    resolution: {integrity: sha512-ytQKuwgmrrkDTFP4LjR0ToE2nqgy886GpvRSpU0JAnrdBYppuY5rLkRUYPU1yCryb24SsKBTL/hlDQAEFVwtZg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   type-fest@4.15.0:
     resolution: {integrity: sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==}
@@ -1749,12 +1803,23 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
+  '@hono/mcp@https://pkg.pr.new/@hono/mcp@06a9050(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)':
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.20.2
+      hono: 4.10.4
+      hono-rate-limiter: 0.4.2(hono@4.10.4)
+      pkce-challenge: 5.0.0
+
   '@hono/mcp@https://pkg.pr.new/@hono/mcp@e63fed5(@modelcontextprotocol/sdk@1.20.2)(hono-rate-limiter@0.4.2(hono@4.10.4))(hono@4.10.4)(pkce-challenge@5.0.0)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.20.2
       hono: 4.10.4
       hono-rate-limiter: 0.4.2(hono@4.10.4)
       pkce-challenge: 5.0.0
+
+  '@hono/node-server@1.19.6(hono@4.10.4)':
+    dependencies:
+      hono: 4.10.4
 
   '@img/colour@1.0.0':
     optional: true
@@ -2350,6 +2415,10 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
+  get-tsconfig@4.13.0:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+
   glob-to-regexp@0.4.1: {}
 
   gopd@1.2.0: {}
@@ -2583,6 +2652,8 @@ snapshots:
 
   react@19.2.0: {}
 
+  resolve-pkg-maps@1.0.0: {}
+
   router@2.2.0:
     dependencies:
       debug: 4.4.3
@@ -2744,6 +2815,13 @@ snapshots:
   toidentifier@1.0.1: {}
 
   tslib@2.8.1: {}
+
+  tsx@4.20.6:
+    dependencies:
+      esbuild: 0.25.4
+      get-tsconfig: 4.13.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   type-fest@4.15.0: {}
 
