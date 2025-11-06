@@ -5,7 +5,12 @@ import mcp from "./mcp";
 
 const transport = new StreamableHTTPTransport();
 
-const app = new Hono().use(cors());
+const app = new Hono().use(
+  cors({
+    origin: (origin) => origin,
+    exposeHeaders: ["mcp-session-id"],
+  })
+);
 
 app.all("/mcp", async (c) => {
   if (!mcp.isConnected()) {
